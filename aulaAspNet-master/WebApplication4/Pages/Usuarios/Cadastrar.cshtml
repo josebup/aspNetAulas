@@ -6,12 +6,45 @@
 
 <h2>Cadastrar</h2>
 
+<script charset="utf-8" type="text/javascript">
+    function checkPassword() {
+        var pass = document.getElementById(1);
+        console.log(pass.value);
+        var confirmacao = document.getElementById(2);
+        console.log(confirmacao.value);
+
+        if (pass.value != confirmacao.value) {
+            window.alert("Senha e confirmação não batem")
+        }
+        else {
+            window.alert("Deu boa!!!")
+        }
+
+    }
+
+</script>
+
 <form>
     <div class="form-group">
         <label for="usuario.Nome">Nome</label>
         <input type="text" name="usuario.Nome" value="@Model.usuario.Nome" class="form-control" placeholder="Nome" />
+
+        <label for="usuario.Email">Email</label>
+        <input type="text" name="usuario.Email" value="@Model.usuario.Email" class="form-control" placeholder="Email" />
+
+        <label for="usuario.Cpf">CPF</label>
+        <input type="text" name="usuario.Cpf" value="@Model.usuario.Cpf" class="form-control" placeholder="CPF" />
+
+        <label for="usuario.DataNascimento">Data de nascimento</label>
+        <input type="date" name="usuario.DataNascimento" value="@Model.usuario.DataNascimento" class="form-control" placeholder="dd/mm/aaaa" />
+
         <label for="usuario.Senha">Senha</label>
-        <input type="password" name="usuario.Senha" class="form-control" placeholder="Senha" />
+        <input id ="1"type="password" name="usuario.Senha" class="form-control" placeholder="Senha" />
+
+        <label for="confirmacaoSenha">Confirmacao de Senha</label>
+        <input id ="2" type="password" name="confirmacaoSenha" class="form-control" placeholder="Confirmacao de Senha" onchange="checkPassword()"/>
+
+        <br>
         <button class="btn btn-primary">Enviar</button>
     </div>
 </form>
