@@ -22,7 +22,7 @@
 
 </script>
 
-<form onsubmit="checkPassword()">
+<form onsubmit="return checkPassword()">
     <div class="form-group">
         <label for="usuario.Nome">Nome</label>
         <input type="text" name="usuario.Nome" value="@Model.usuario.Nome" class="form-control" placeholder="Nome" />
@@ -40,7 +40,7 @@
         <input id ="senha"type="password" name="usuario.Senha" class="form-control" placeholder="Senha" />
 
         <label for="confirmacaoSenha">Confirmacao de Senha</label>
-        <input id ="confirmsenha" type="password" name="confirmacaoSenha" class="form-control" placeholder="Confirmacao de Senha" onchange="checkPassword()"/>
+        <input id ="confirmsenha" type="password" class="form-control" placeholder="Confirmacao de Senha" onchange="return checkPassword()"/>
 
         <br>
         <button class="btn btn-primary">Enviar</button>
